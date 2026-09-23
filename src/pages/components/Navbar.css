@@ -1,0 +1,41 @@
+.nav {
+  background-color: #1e293b;
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.link {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #fff;
+  border-radius: 1rem;
+  transition: all 300ms;
+  text-decoration: none;
+}
+
+.link:hover{
+  color: #5b6371;
+}
+
+.container-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  color: #000;
+}

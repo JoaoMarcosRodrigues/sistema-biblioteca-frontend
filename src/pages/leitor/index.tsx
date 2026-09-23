@@ -2,7 +2,7 @@ import './style.css'
 
 function Leitor() {
   return (
-    <div><h1>LEITOR</h1></div>
+    <div><h2>LEITOR</h2></div>
   )
 }
 

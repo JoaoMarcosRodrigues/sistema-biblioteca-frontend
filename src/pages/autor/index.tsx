@@ -1,4 +1,4 @@
-import { TableAutor } from "../components/table-autor/table-autor";
+import { TableAutor } from "../components/TableAutor";
 import "./style.css";
 import ImgLupa from "../../assets/lupa.png";
 import { useAutorData } from "../../hooks/useAutorData";
@@ -23,7 +23,7 @@ function Autor() {
 
   return (
     <div className="container">
-      <h1>Autores</h1>
+      <h2>Autores</h2>
       <div className="cabecalho-pesquisa">
         <input type="text" placeholder="Pesquise o autor..." />
         <button type="button" title="Pesquisar autor">
@@ -39,6 +39,7 @@ function Autor() {
               <th>Nacionalidade</th>
               <th>Data de Nascimento</th>
               <th>Biografia</th>
+              <th>Ações</th>
             </tr>
           </thead>
           <tbody>
@@ -57,6 +58,7 @@ function Autor() {
             {data?.content.map((autorData) => (
               <TableAutor
                 key={autorData.id}
+                id={autorData.id}
                 nome={autorData.nome}
                 nacionalidade={autorData.nacionalidade}
                 dataNascimento={autorData.dataNascimento}

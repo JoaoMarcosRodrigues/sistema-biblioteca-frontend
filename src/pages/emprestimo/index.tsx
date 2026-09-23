@@ -1,9 +1,9 @@
 import './style.css'
 
-function EMPRESTIMO() {
+function Emprestimo() {
   return (
-    <div><h1>EMPRÉSTIMO</h1></div>
+    <div><h2>EMPRÉSTIMO</h2></div>
   )
 }
 
-export default EMPRESTIMO
+export default Emprestimo
