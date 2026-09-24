@@ -1,5 +1,5 @@
 export interface AutorData{
-    id: number,
+    id?: number,
     nome: string,
     nacionalidade: string,
     dataNascimento: string,

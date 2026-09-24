@@ -10,7 +10,6 @@ function formatarData(data: string): string {
 }
 
 export function TableAutor({
-  id,
   nome,
   nacionalidade,
   dataNascimento,
@@ -21,13 +20,13 @@ export function TableAutor({
       <td>{nome}</td>
       <td>{nacionalidade}</td>
       <td>{formatarData(dataNascimento)}</td>
-      <td>{biografia}</td>
+      <td title={biografia}>{biografia.length > 50 ? biografia.substring(0,50)+'...' : biografia}</td>
       <td>
         <div className="container-botoes-acao">
-          <button key={id} className="botao-acao">
+          <button className="botao-acao">
               <img src={IconEdit} alt="Editar" />
           </button>
-          <button key={id} className="botao-acao">
+          <button className="botao-acao">
               <img src={IconDelete} alt="Excluir" />
           </button>
         </div>

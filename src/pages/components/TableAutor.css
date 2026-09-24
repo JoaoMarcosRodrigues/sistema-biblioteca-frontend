@@ -1,15 +1,12 @@
 .botao-acao {
-  width: 30px;
-  height: 30px;
   align-items: center;
   justify-content: center;
   display: flex;
+  padding: 10px;
+}
 
-  & img{
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-  }
+.botao-acao:hover{
+  cursor: pointer;
 }
 
 .container-botoes-acao{

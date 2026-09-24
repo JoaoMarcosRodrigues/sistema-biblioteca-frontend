@@ -3,11 +3,13 @@ import "./style.css";
 import ImgLupa from "../../assets/lupa.png";
 import { useAutorData } from "../../hooks/useAutorData";
 import { useState } from "react";
+import ModalCriarAtor from "../components/ModalCriarAutor";
 
 function Autor() {
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(10);
   const { data, isLoading, isFetching } = useAutorData(page, size);
+  const [isModalCriarAutor, setIsModalCriarAutor] = useState(false);
 
   const handlePreviousPage = () => {
     if (page > 0) {
@@ -21,15 +23,20 @@ function Autor() {
     }
   };
 
+  const showModalAutor = () => {
+    setIsModalCriarAutor(!isModalCriarAutor)
+  }
+
   return (
     <div className="container">
+      {isModalCriarAutor && <ModalCriarAtor closeModal={showModalAutor}/>}
       <h2>Autores</h2>
       <div className="cabecalho-pesquisa">
         <input type="text" placeholder="Pesquise o autor..." />
         <button type="button" title="Pesquisar autor">
           <img src={ImgLupa} alt="Pesquisar" />
         </button>
-        <button type="button">Novo</button>
+        <button type="button" onClick={showModalAutor}>Novo</button>
       </div>
       <div className="table-wrapper">
         <table className="table-autor">
@@ -58,7 +65,6 @@ function Autor() {
             {data?.content.map((autorData) => (
               <TableAutor
                 key={autorData.id}
-                id={autorData.id}
                 nome={autorData.nome}
                 nacionalidade={autorData.nacionalidade}
                 dataNascimento={autorData.dataNascimento}
